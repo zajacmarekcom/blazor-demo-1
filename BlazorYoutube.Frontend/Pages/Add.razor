@@ -1,0 +1,40 @@
+﻿@page "/Add"
+@attribute [Authorize]
+@using BlazorYoutube.Contracts
+@using BlazorYoutube.Frontend.Services
+
+@inject TaskService TaskService
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>New Task</h3>
+
+<div>
+    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Title</RadzenText>
+    <RadzenTextBox @bind-Value="@Task.Title" Class="w-100"/>
+</div>
+<div>
+    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Description</RadzenText>
+    <RadzenTextArea @bind-Value="Task.Description" Class="w-100"/>
+</div>
+<div>
+    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Due Date</RadzenText>
+    <RadzenDatePicker @bind-Value="@Task.DueDate" DateFormat="d" Class="w-100"/>
+</div>
+
+<div>
+    <RadzenButton Click="AddTask" ButtonStyle="ButtonStyle.Success" Text="Add"></RadzenButton>
+</div>
+
+@code {
+    private NewTaskDto Task { get; } = new();
+    
+    
+    private async Task AddTask()
+    {
+        await TaskService.AddTaskAsync(Task);
+        
+        NavigationManager.NavigateTo("/");
+    }
+
+}

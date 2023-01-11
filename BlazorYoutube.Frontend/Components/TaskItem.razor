@@ -1,0 +1,33 @@
+﻿@using BlazorYoutube.Contracts
+
+<div class="row d-flex justify-content-between align-items-center border-1">
+    <div class="col-1">
+        <RadzenButton Icon="done" Click="Complete" Text="" Size="ButtonSize.Large" ButtonType="ButtonType.Button" ButtonStyle="ButtonStyle.Success"></RadzenButton>
+    </div>
+    <div class="col-6">
+        <h4>@Task?.Title</h4>
+        <p>@Task?.Description</p>
+    </div>
+    <div class="col-4">
+        <h5>@Task?.DueDate.ToShortDateString()</h5>
+    </div>
+    <div class="col-1">
+        <RadzenButton Icon="remove" Click="Remove" Text="" Size="ButtonSize.Large" ButtonType="ButtonType.Button" ButtonStyle="ButtonStyle.Danger"></RadzenButton>
+    </div>
+</div>
+
+@code {
+    [Parameter] public TaskDto? Task { get; set; }
+    [Parameter] public EventCallback<int> OnRemove { get; set; }
+    [Parameter] public EventCallback<int> OnComplete { get; set; }
+    
+    private async Task Remove()
+    {
+        await OnRemove.InvokeAsync(Task!.Id);
+    }
+    
+    private async Task Complete()
+    {
+        await OnComplete.InvokeAsync(Task!.Id);
+    }
+}

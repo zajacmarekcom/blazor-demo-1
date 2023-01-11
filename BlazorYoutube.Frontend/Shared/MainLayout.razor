@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inherits LayoutComponentBase
+
+@inject NavigationManager NavigationManager
+
+<RadzenLayout>
+    <RadzenHeader class="d-flex justify-content-between">
+        <div class="d-flex align-content-center">
+            <RadzenLabel Text="TODO APP"></RadzenLabel>
+        </div>
+        <AuthorizeView>
+            <Authorized>
+                <div class="d-flex align-content-center">
+                    <RadzenLabel Text=@($"Hello {context.User.Identity.Name}!")></RadzenLabel>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        <div class="d-flex align-content-center">
+            <RadzenButton Text="Add" Click="AddTask"></RadzenButton>
+            <RadzenButton Text="Log out" Click="Logout"></RadzenButton>
+        </div>
+    </RadzenHeader>
+    <RadzenBody>
+        <div class="container col-8">
+            @Body
+        </div>
+    </RadzenBody>
+</RadzenLayout>
+<RadzenNotification></RadzenNotification>
+
+@code {
+
+    private void AddTask()
+    {
+        NavigationManager.NavigateTo("/add");
+    }
+
+    private void Logout()
+    {
+        NavigationManager.NavigateToLogout("authentication/logout");
+    }
+}

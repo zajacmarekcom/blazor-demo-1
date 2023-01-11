@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYoutube.Web", "BlazorYoutube.Web\BlazorYoutube.Web.csproj", "{6ED7FF9E-137A-4707-ADB5-798405625063}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYoutube.Contracts", "BlazorYoutube.Contracts\BlazorYoutube.Contracts.csproj", "{09895B2E-3EA5-4D0A-B961-2CDDCF77B8F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorYoutube.Frontend", "BlazorYoutube.Frontend\BlazorYoutube.Frontend.csproj", "{939B23CB-5EBF-4E90-9552-A0C32D893945}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ED7FF9E-137A-4707-ADB5-798405625063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED7FF9E-137A-4707-ADB5-798405625063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED7FF9E-137A-4707-ADB5-798405625063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED7FF9E-137A-4707-ADB5-798405625063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09895B2E-3EA5-4D0A-B961-2CDDCF77B8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09895B2E-3EA5-4D0A-B961-2CDDCF77B8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09895B2E-3EA5-4D0A-B961-2CDDCF77B8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09895B2E-3EA5-4D0A-B961-2CDDCF77B8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939B23CB-5EBF-4E90-9552-A0C32D893945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939B23CB-5EBF-4E90-9552-A0C32D893945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939B23CB-5EBF-4E90-9552-A0C32D893945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939B23CB-5EBF-4E90-9552-A0C32D893945}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
